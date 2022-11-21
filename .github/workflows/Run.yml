@@ -15,6 +15,11 @@ jobs:
     steps:
       - name: Print
         run: echo ${{ needs.run.outputs.test }}
+  next2:
+    needs: run
+    uses: muukii/play-github-actions/.github/workflows/Next.yml@main
+    with:
+      text: ${{ needs.run.outputs.test }}
 
 
 
