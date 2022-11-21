@@ -20,4 +20,7 @@ jobs:
           username: ${{ inputs.username }}
           token: ${{ secrets.token }}      
       - name: output
+        id: my
         run: echo "myValue=1" >> $GITHUB_OUTPUT
+      - name: debug
+        run: echo ${{ steps.my.myValue }}
