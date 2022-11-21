@@ -12,4 +12,4 @@ jobs:
         id: my
         run: echo "test=hello" >> $GITHUB_OUTPUT
       - name: debug
-        run: echo "${{ steps.my.test }}"
+        run: echo "${{ steps.my.outputs.test }}"
