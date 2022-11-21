@@ -9,6 +9,13 @@ on:
 jobs:
   run:
     uses: muukii/play-github-actions/.github/workflows/Reusable.yml@main
+  next:
+    needs: run
+    runs-on: ubutu-latest
+    steps:
+      - name: Print
+        run: echo ${{ needs.run.outputs.test }}
+
 
 
 
