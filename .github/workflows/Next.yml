@@ -6,10 +6,15 @@ on:
       text:
         type: string
         required: true
+  workflow_dispatch:
+    inputs:
+      text:
+        type: string
+        required: true
 
 jobs:
   example_job:
     runs-on: ubuntu-latest
     steps:
       - name: debug
-        run: echo "${{ github.event.inputs.text }}"
+        run: echo "${{ inputs.text }}"
